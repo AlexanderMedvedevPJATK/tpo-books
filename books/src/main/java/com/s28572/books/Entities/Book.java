@@ -3,6 +3,7 @@ package com.s28572.books.Entities;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 public class Book {
@@ -12,18 +13,18 @@ public class Book {
     private Long id;
     private String title;
     private LocalDate releaseDate;
-    @ManyToOne
-    private Author author;
+    @ManyToMany
+    private List<Author> authors;
     @ManyToOne
     private Publisher publisher;
 
     public Book() {
     }
 
-    public Book(String title, LocalDate releaseDate, Author author, Publisher publisher) {
+    public Book(String title, LocalDate releaseDate, List<Author> authors, Publisher publisher) {
         this.title = title;
         this.releaseDate = releaseDate;
-        this.author = author;
+        this.authors = authors;
         this.publisher = publisher;
     }
 
@@ -51,12 +52,12 @@ public class Book {
         this.releaseDate = releaseDate;
     }
 
-    public Author getAuthor() {
-        return author;
+    public List<Author> getAuthors() {
+        return authors;
     }
 
-    public void setAuthor(Author author) {
-        this.author = author;
+    public void setAuthors(List<Author> authors) {
+        this.authors = authors;
     }
 
     public Publisher getPublisher() {
