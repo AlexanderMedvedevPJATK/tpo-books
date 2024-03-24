@@ -14,7 +14,43 @@ public class Author {
     private String firstname;
     private String lastname;
 
-    @ManyToMany(mappedBy = "author")
+    @ManyToMany(mappedBy = "authors")
     private List<Book> books;
 
+    public Author() {
+    }
+
+    public Author(String firstname, String lastname, List<Book> books) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.books = books;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
+    }
 }

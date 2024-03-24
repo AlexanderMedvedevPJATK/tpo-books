@@ -3,15 +3,17 @@ spring:
     console:
       path: /h2
   datasource:
-    url: jdbc:h2:file:./db/books;DATABASE_TO_UPPER=false
+    url: jdbc:h2:mem:books;DATABASE_TO_UPPER=false;
     username: user
-    password: pass
+    password:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-
-
+    defer-datasource-initialization: true
+  sql:
+    init:
+      data-locations: classpath:sql-data/*.sql
 
