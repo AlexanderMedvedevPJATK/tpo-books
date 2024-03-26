@@ -28,6 +28,13 @@ public class Book {
         this.publisher = publisher;
     }
 
+    public Book(String title, LocalDate releaseDate, Author author, Publisher publisher) {
+        this.title = title;
+        this.releaseDate = releaseDate;
+        this.authors = List.of(author);
+        this.publisher = publisher;
+    }
+
     public Long getId() {
         return id;
     }
@@ -63,4 +70,6 @@ public class Book {
     public void setPublisher(Publisher publisher) {
         this.publisher = publisher;
     }
+
+
 }
