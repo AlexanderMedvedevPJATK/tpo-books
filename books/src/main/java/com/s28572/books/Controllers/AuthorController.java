@@ -11,4 +11,12 @@ public class AuthorController {
     public AuthorController(AuthorService authorService) {
         this.authorService = authorService;
     }
+
+    public void showAuthors() {
+        authorService.printAuthors(authorService.showAuthors());
+    }
+
+    public void addAuthor() {
+        authorService.addAuthor();
+    }
 }

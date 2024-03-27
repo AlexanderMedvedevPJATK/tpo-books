@@ -11,4 +11,12 @@ public class PublisherController {
     public PublisherController(PublisherService publisherService) {
         this.publisherService = publisherService;
     }
+
+    public void showPublishers() {
+        publisherService.printPublishers(publisherService.showPublishers());
+    }
+
+    public void addPublisher() {
+        publisherService.addPublisher();
+    }
 }
