@@ -17,7 +17,6 @@ public class PublisherService {
         this.scanner = scanner;
     }
 
-
     public Publisher getPublisher() {
         System.out.println("Would you like to add a publisher or find an existing one?");
         System.out.println("1. Add publisher");
@@ -44,7 +43,7 @@ public class PublisherService {
         scanner.nextLine();
 
         if (choice == 1) {
-            return publisherRepository.findAll();
+            return (List<Publisher>) publisherRepository.findAll();
         } else if (choice == 2) {
             return searchPublishers();
         } else {

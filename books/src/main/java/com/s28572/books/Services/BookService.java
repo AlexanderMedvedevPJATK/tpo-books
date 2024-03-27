@@ -32,7 +32,7 @@ public class BookService {
         scanner.nextLine();
 
         if (choice == 1) {
-            return bookRepository.findAll();
+            return (List<Book>) bookRepository.findAll();
         } else if (choice == 2) {
             return searchBooks();
         } else {

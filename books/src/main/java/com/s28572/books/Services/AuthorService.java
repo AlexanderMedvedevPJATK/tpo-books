@@ -43,7 +43,7 @@ public class AuthorService {
         scanner.nextLine();
 
         if (choice == 1) {
-            return authorRepository.findAll();
+            return (List<Author>) authorRepository.findAll();
         }
         if (choice == 2 ){
             return searchAuthors();
